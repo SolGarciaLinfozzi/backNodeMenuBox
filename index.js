@@ -14,24 +14,12 @@ const PORT = process.env.PORT || 8080;
 require('./conexion/conexion');
 const Consulta = require('./model/userModel')
 
+
 const app = express();
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ejemplo para permitir solicitudes desde una URL específica
-const allowedOrigins = ['https://proyecto-menubox.vercel.app'];
-
-// Configurar el middleware CORS para permitir solicitudes desde la URL específica
-app.use(cors({
-    origin: function (origin, callback) {
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('No permitido por CORS'));
-        }
-    }
-}));
 
 //Rutas de la Aplicación
 // GET
