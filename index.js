@@ -26,7 +26,7 @@ app.get('/', (req,res)=>{
 })
 
 //POST
-app.post('/consultas', async (req,res)=>{
+app.post('/', async (req,res)=>{
     console.log(req.body);
     const {nombre,apellido,email,consulta} = req.body;
     console.log(`Mi nombre es ${nombre}, mi apellido es ${apellido}, mi mail es ${email} y la consulta es ${consulta}`)
