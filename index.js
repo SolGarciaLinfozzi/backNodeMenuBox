@@ -16,6 +16,12 @@ const Consulta = require('./model/userModel')
 
 
 const app = express();
+const corsOptions = {
+    origin: 'https://proyecto-menubox.vercel.app', // Coloca aquí el origen del frontend
+    methods: ['GET', 'POST'],
+  };
+  
+  app.use(cors(corsOptions));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
